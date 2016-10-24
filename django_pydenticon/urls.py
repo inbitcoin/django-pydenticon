@@ -3,14 +3,9 @@ from django.conf.urls import patterns, url
 
 # Application imports.
 from .views import image
-
-urlpatterns = patterns(
-    'django_pydenticon.views',
-
-    # View for rendering an identicon image.
-    url(r'^image/(?P<data>.+)$', image, name="image")
-    )
-
+urlpatterns = [
+    url(r'^image/(?P<data>.+)$', image, name="image"),
+]
 def get_patterns(instance="django_pydenticon"):
     """
     Generates URL patterns for Django Pydenticon application. The return value
